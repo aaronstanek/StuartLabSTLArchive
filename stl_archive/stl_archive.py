@@ -1,7 +1,7 @@
 import os
 import time
 
-stl_path = "C:/Users/Aaron/Desktop/stl_archive/" #needs correct ending slash
+stl_path = "C:/Users/Aaron/Documents/StuartLab/StuartLabSTLArchive/stl_archive/" #needs correct ending slash
 
 def fileExists(path):
     return os.path.isfile(path)
@@ -60,8 +60,7 @@ class project:
         writeFile(self.fullPath+stl.name+".stl.html",des)
     def addDefaults(self,templates):
         #first for the project
-        #if fileExists(self.fullPath+"description.html")==False:
-        if True:
+        if fileExists(self.fullPath+"description.html")==False:
             self.makeOwnDescription(templates)
         if True:
             self.makeOwnList(templates)
