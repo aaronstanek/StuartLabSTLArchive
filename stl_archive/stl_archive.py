@@ -107,6 +107,8 @@ def loadTemplates(stl_path):
 
 def main():
     global stl_path
+    if os.path.exists(stl_path+"projects")==False:
+        os.makedirs(stl_path+"projects")
     arc = stl_archive(stl_path)
     arc.findAll()
     templates = loadTemplates(stl_path)
