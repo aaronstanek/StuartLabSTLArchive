@@ -50,7 +50,7 @@ class project:
     def makeOwnList(self,templates):
         data = ""
         for x in self.stls:
-            data = data+"<a href=\""+x.name+".stl.html\">"+x.name+".stl</a><br>"
+            data = data+"<a href=\""+x.name+".stl.html\">"+x.name+".stl</a><br><br>"
         lst = spliceIn(templates["plist"],[str(self.name),data])
         writeFile(self.fullPath+"list.html",lst)
     def makeSTLDescription(self,stl,templates):
@@ -88,7 +88,7 @@ class stl_archive:
     def makeMainPage(self,templates):
         data = ""
         for x in self.projects:
-            data = data+"<a href=\"projects/"+x.name+"/description.html\">"+x.name+"</a><br>"
+            data = data+"<a href=\"projects/"+x.name+"/description.html\">"+x.name+"</a><br><br>"
         dateTime = time.strftime("on %x at %X")
         lst = spliceIn(templates["alist"],[dateTime,data])
         writeFile(self.fullPath+"archive.html",lst)
