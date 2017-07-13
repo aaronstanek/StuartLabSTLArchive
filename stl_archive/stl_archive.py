@@ -40,6 +40,7 @@ class project:
         self.stls.append(stlFile(name,fullPath))
     def findSTL(self):
         fl = os.listdir(self.fullPath)
+        fl.sort()
         for x in fl:
             s = x.split(".")
             if (s[-1]=="stl") and os.path.isfile(self.fullPath+x):
@@ -77,6 +78,7 @@ class stl_archive:
         self.projects.append(project(name,fullPath))
     def findAll(self):
         pl = os.listdir(self.fullPath+"projects/")
+        pl.sort()
         pl_edit = []
         for x in pl:
             if os.path.isdir(self.fullPath+"projects/"+x):
